@@ -70,10 +70,15 @@ public class MatriculaServiceImpl implements IMatriculaService {
 			System.out.println("La matricula ya se encuentra registrada");
 		}
 		
+		//Creacion de la matricula con los valores del propietario, vehiculo y valor calculado de valor matricula
 		Matricula matricula = new Matricula();
 		matricula.setFechaMatricula(LocalDateTime.now());
 		matricula.setPropietario(propietario);
 		matricula.setValorMatricula(valorMatricula);
+		matricula.setVehiculo(vehiculo);
+		this.guardar(matricula);
+		
+		System.out.println("Datos de la matricula: \n" + matricula);
 	}
 
 }
